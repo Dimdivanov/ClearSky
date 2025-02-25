@@ -58,17 +58,11 @@ ClearSky is a modern web application that provides **real-time weather updates**
     ```sh
     npm install
     ```
-4. **Configure environment variables** (create a `.env` file):
-    ```env
-    PORT=5000
-    MONGO_URI=your_mongodb_connection_string
-    OPENWEATHER_API_KEY=your_openweathermap_api_key
-    ```
-5. **Start the server**:
+4. **Start the server**:
     ```sh
     npm start
     ```
-6. **Start the Cronjob**:
+5. **Start the Cronjob**:
     ```sh
     npm run debug
     ```
@@ -77,7 +71,7 @@ ClearSky is a modern web application that provides **real-time weather updates**
 
 1. **Navigate to the frontend folder**:
     ```sh
-    cd client
+    cd client/clearsky/src/app
     ```
 2. **Install dependencies**:
     ```sh
