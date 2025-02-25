@@ -1,0 +1,23 @@
+<div class="weather-conditions">
+  <h3>Air Conditions</h3>
+  <div class="air-conditions">
+    <div class="left-conditions">
+      <div class="feels">
+        <div class="conditions">
+          <img src="assets/images/thermo-icon.png" alt="real-feel" />
+          <h3>Real Feel</h3>
+        </div>
+        <p>{{ weather?.feels_like?.toFixed(0) }}&deg;</p>
+      </div>
+    </div>
+    <div class="right-conditions">
+      <div class="wind">
+        <div class="conditions">
+          <img src="assets/images/wind-icon.png" alt="wind-icon" />
+          <h3>Wind</h3>
+        </div>
+        <p>{{ weather?.wind }} km/h</p>
+      </div>
+    </div>
+  </div>
+</div>

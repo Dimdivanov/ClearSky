@@ -1,0 +1,26 @@
+/* weather data */
+.weather-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+}
+.city-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+}
+.city-container h2 {
+  font-size: 40px;
+}
+.city-weather h3 {
+  color: white;
+  font-size: 50px;
+}
+.weather-data img {
+  width: 200px;
+}

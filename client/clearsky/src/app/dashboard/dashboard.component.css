@@ -1,0 +1,21 @@
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}
+.section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 50%;
+}
+.weather-menu {
+  padding: 10px 0 10px 0;
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+}

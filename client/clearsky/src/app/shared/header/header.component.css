@@ -1,0 +1,31 @@
+/* header section */
+header {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.header-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 600px;
+}
+.logo-container a {
+  font-size: 30px;
+  font-weight: 600;
+}
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.user-nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}

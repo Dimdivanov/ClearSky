@@ -1,0 +1,17 @@
+<div class="weather-data">
+  <div class="left-side">
+    <div class="city-container">
+      <h2>{{ weather?.city }}</h2>
+      <h3>{{ weather?.description?.toUpperCase() }}</h3>
+    </div>
+    <div class="city-weather">
+      <h3>{{ weather?.temperature?.toFixed(0) }}&deg;</h3>
+    </div>
+  </div>
+  <div class="right-side">
+    <img
+      [src]="'https://openweathermap.org/img/wn/' + weather?.icon + '@2x.png'"
+      alt="icon-weather"
+    />
+  </div>
+</div>

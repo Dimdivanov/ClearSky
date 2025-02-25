@@ -1,0 +1,15 @@
+<div class="weather-hourly">
+  <h3>Today's Forecast</h3>
+  <div class="hourly-container">
+    @for(forecast of forecasts; track $index){
+    <div class="hour-data">
+      <p>{{ forecast.formattedTime }}</p>
+      <img
+        [src]="'https://openweathermap.org/img/wn/' + forecast?.icon + '@2x.png'"
+        alt="icon-weather"
+      />
+      <p>{{ forecast.temperature.toFixed(0) }} &deg;</p>
+    </div>
+    }
+  </div>
+</div>

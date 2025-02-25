@@ -1,0 +1,27 @@
+/* weather-hourly */
+.weather-hourly {
+  background-color: #202835;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hourly-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px 50px;
+}
+.hour-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 25%;
+}
+.hour-data img {
+  height: 60px;
+  width: 60px;
+}

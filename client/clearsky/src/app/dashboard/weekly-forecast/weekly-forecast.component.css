@@ -1,0 +1,14 @@
+/* weekly forecast */
+.weekly-forecast {
+  background-color: #202835;
+  border-radius: 15px;
+  width: 400px;
+  height: 100%;
+}
+.weekly-forecast > h3 {
+  padding: 20px;
+}
+.forecast-data {
+  display: flex;
+  justify-content: space-around;
+}
