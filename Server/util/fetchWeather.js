@@ -34,13 +34,15 @@ async function fetchWeatherData(location) {
         }));
 
         // Process Weekly Forecast
-        const weeklyForecastArray = forecastData.list.map((forecast) => ({
-            dt_txt: forecast.dt_txt,
-            temp_min: Math.round(forecast.main.temp_min - 273.15),
-            temp_max: Math.round(forecast.main.temp_max - 273.15),
-            condition: forecast.weather[0].description,
-            icon: forecast.weather[0].icon,
-        }));
+        const weeklyForecastArray = forecastData.list
+            .filter((forecast) => forecast.dt_txt.includes('12:00:00'))
+            .map((forecast) => ({
+                dt_txt: forecast.dt_txt,
+                temp_min: Math.round(forecast.main.temp_min - 273.15),
+                temp_max: Math.round(forecast.main.temp_max - 273.15),
+                condition: forecast.weather[0].description,
+                icon: forecast.weather[0].icon,
+            }));
 
         // Prepare New Weather Data
         const weatherUpdate = {
