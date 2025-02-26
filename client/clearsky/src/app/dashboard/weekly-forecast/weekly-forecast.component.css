@@ -12,3 +12,9 @@
   display: flex;
   justify-content: space-around;
 }
+.day-data {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

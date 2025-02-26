@@ -1,6 +1,8 @@
 export interface Forecast {
   dt_txt: string;
   temperature: number;
+  temp_min: number;
+  temp_max: number;
   condition: string;
   icon: string;
 }
@@ -15,10 +17,4 @@ export interface WeatherData {
   sunset: number;
   wind: number;
   forecast: Forecast[]; // Array of forecast data
-}
-
-export interface SevenDayForecast {
-  day: string;
-  icon: string;
-  temperature: number;
 }
