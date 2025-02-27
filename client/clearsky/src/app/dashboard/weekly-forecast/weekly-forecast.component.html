@@ -1,12 +1,31 @@
 <div class="weekly-forecast">
-  <h3>7 day forecast</h3>
+  <h3>7 Day Forecast</h3>
   <div class="forecast-data">
-    <h3>Day</h3>
-    <h3>Weather</h3>
-    <h3>Degree</h3>
+    <div class="forecast-column">
+      <h3>Day</h3>
+    </div>
+    <div class="forecast-column">
+      <h3>Weather</h3>
+    </div>
+    <div class="forecast-column">
+      <h3>Degree</h3>
+    </div>
   </div>
-
-  <div class="day-data">
-    <p></p>
+  @for (weather of weatherData?.weeklyForecast; track $index) {
+  <div class="forecast-content">
+    <div class="forecast-column">
+      <p>{{ weather.dt_txt | date : "EEEE" }}</p>
+      <!-- Day of the week -->
+    </div>
+    <div class="forecast-column">
+      <img
+        src="https://openweathermap.org/img/wn/{{ weather.icon }}.png"
+        alt="weather-icon"
+      />
+    </div>
+    <div class="forecast-column">
+      <p>{{ weather.temp_max }}°C / {{ weather.temp_min }}°C</p>
+    </div>
   </div>
+  }
 </div>

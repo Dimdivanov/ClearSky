@@ -1,20 +1,76 @@
-/* weekly forecast */
+/* Weekly forecast container */
 .weekly-forecast {
   background-color: #202835;
   border-radius: 15px;
   width: 400px;
   height: 100%;
-}
-.weekly-forecast > h3 {
   padding: 20px;
+  color: white;
 }
+
+/* Header for the whole forecast */
+.weekly-forecast > h3 {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+/* Layout for forecast data */
 .forecast-data {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
 }
-.day-data {
-  padding: 10px;
+/* forecast content */
+.forecast-content {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
+  align-items: center;
+}
+/* Column styling for the headers */
+.forecast-column {
+  padding: 15px;
+  flex: 1;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Styling for each day's data */
+.day-data {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #444;
+}
+
+.day-data .forecast-column {
+  text-align: center;
+}
+
+.day-data p {
+  margin: 0;
+}
+
+/* Ensure image size is consistent */
+.day-data img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .weekly-forecast {
+    width: 100%;
+  }
+
+  .forecast-data,
+  .day-data {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .forecast-column {
+    margin-bottom: 10px;
+  }
 }

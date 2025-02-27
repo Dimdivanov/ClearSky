@@ -6,6 +6,14 @@ export interface Forecast {
   condition: string;
   icon: string;
 }
+export interface WeeklyForecast {
+  dt_txt: string;
+  temperature: number;
+  temp_min: number;
+  temp_max: number;
+  condition: string;
+  icon: string;
+}
 
 export interface WeatherData {
   city: string;
@@ -17,4 +25,5 @@ export interface WeatherData {
   sunset: number;
   wind: number;
   forecast: Forecast[]; // Array of forecast data
+  weeklyForecast: WeeklyForecast[];
 }
