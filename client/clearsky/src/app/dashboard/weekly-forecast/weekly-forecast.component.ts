@@ -13,5 +13,4 @@ import { CommonModule, DatePipe } from '@angular/common';
 })
 export class WeeklyForecastComponent{
   @Input() weather: WeatherData | null = null;
- 
 }

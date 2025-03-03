@@ -12,5 +12,4 @@ import { Forecast } from '../../type/weatherType';
 })
 export class HourlyForecastComponent {
   @Input() forecasts: (Forecast & { formattedTime: string } )[] = [];
-  
 }

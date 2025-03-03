@@ -10,15 +10,6 @@ import { Forecast, WeatherData } from '../../type/weatherType';
   templateUrl: './air-conditions.component.html',
   styleUrl: './air-conditions.component.css',
 })
-export class AirConditionsComponent{
-   @Input() weather: WeatherData | null = null;
- 
-
-  // constructor(private forecastService: WeatherService) {}
-
-  // ngOnInit(): void {
-  //   this.forecastService.getWeather().subscribe((data) => {
-  //     this.weather = data;
-  //   })
-  // }
+export class AirConditionsComponent {
+  @Input() weather: WeatherData | null = null;
 }
