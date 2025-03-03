@@ -102,6 +102,13 @@ ClearSky is a modern web application that provides **real-time weather updates**
 -   [x] Guest Weather Access
 -   [x] UI Enhancements (Loaders, Themes, Unit Conversion)
 
+### ✅ To Do Tasks:
+
+-   [] Light and dark theme - with css variables
+-   [] Login and Register user + templates
+-   [] Saved locations for user + server side
+-   [] My Places page with displayed weather data
+
 ---
 
 ## 🤝 Contribution
