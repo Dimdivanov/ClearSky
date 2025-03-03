@@ -11,7 +11,7 @@
       <h3>Degree</h3>
     </div>
   </div>
-  @for (weather of weatherData?.weeklyForecast; track $index) {
+  @for (weather of weather?.weeklyForecast; track $index) {
   <div class="forecast-content">
     <div class="forecast-column">
       <p>{{ weather.dt_txt | date : "EEEE" }}</p>

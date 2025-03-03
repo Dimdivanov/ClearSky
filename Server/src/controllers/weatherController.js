@@ -4,9 +4,16 @@ const { fetchWeatherData } = require('../../util/fetchWeather');
 
 router.get('/weather', async (req, res) => {
     try {
-        const locationData = await getUserLocation(req);
-        const weatherData = await fetchWeatherData(locationData);
+        const city = req.query.city;
 
+        let locationData;
+        if (city) {
+            locationData = { city };
+        } else {
+            locationData = await getUserLocation(req);
+        }
+
+        const weatherData = await fetchWeatherData(locationData);
         res.json(weatherData);
     } catch (err) {
         console.error('Could not fetch weather data:', err);

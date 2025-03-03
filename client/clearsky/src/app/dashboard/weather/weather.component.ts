@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { WeatherData } from '../../type/weatherType';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-weather',
@@ -10,12 +11,6 @@ import { WeatherData } from '../../type/weatherType';
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.css',
 })
-export class WeatherComponent implements OnInit {
-  weather: WeatherData | null = null;
-  constructor(private weatherService: WeatherService) {}
-  ngOnInit(): void {
-    this.weatherService.getWeather().subscribe((data) => {
-      this.weather = data;
-    });
-  }
+export class WeatherComponent {
+  @Input() weather: WeatherData | null = null;
 }
