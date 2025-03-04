@@ -46,9 +46,9 @@ const fetchWeatherData = async () => {
     }
 };
 
-cron.schedule('0 */6 * * *', fetchWeatherData, {
+cron.schedule('0 * * * *', fetchWeatherData, {
     scheduled: true,
     timezone: 'Europe/London',
 });
 
-console.log('Cron job scheduled to fetch weather data every 6 hours!');
+console.log('Cron job scheduled to fetch weather data every 1 hour!');
