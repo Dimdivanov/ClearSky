@@ -48,7 +48,6 @@ export class DashboardComponent implements OnInit {
   updateWeather(city: string): void {
     this.weatherService.getWeather(city).subscribe({
       next: (weather) => {
-        console.log('Updated Weather Data:', weather);
         this.weatherData = weather;
         this.weatherService.setWeatherData(weather);
 
