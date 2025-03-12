@@ -15,5 +15,6 @@ export class LoginComponent {
   onSubmit() {
     console.log('form is submitted');
     console.log(this.form?.controls);
+    this.form?.resetForm();
   }
 }
