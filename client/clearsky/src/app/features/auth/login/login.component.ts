@@ -13,8 +13,12 @@ export class LoginComponent {
   @ViewChild('loginForm') form: NgForm | undefined;
 
   onSubmit() {
+    if (this.form?.invalid) {
+      console.log('not valid form');
+      return;
+    }
+
     console.log('form is submitted');
-    console.log(this.form?.controls);
     this.form?.resetForm();
   }
 }

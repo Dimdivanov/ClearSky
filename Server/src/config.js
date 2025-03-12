@@ -7,4 +7,5 @@ module.exports = {
     PORT: process.env.PORT || 3000,
     HASH: parseInt(process.env.HASH) || 12,
     API_KEY: process.env.API_KEY,
+    SECRET: process.env.SECRET,
 };

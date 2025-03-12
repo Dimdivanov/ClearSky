@@ -4,10 +4,10 @@ const weatherController = require('./controllers/weatherController');
 const authController = require('./controllers/authController');
 
 router.use('/api', weatherController);
-router.use('/register', authController);
+router.use('/auth', authController);
 
 router.all('*', (req, res) => {
-    res.send('404');
+    res.render('404');
 });
 
 module.exports = router;

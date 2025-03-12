@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //mongoDB connection
 mongoose.connect(MONGO_URI);
-mongoose.connection.on('connected', () => console.log('data base connected'));
+mongoose.connection.on('connected', () => console.log('Data base connected'));
 mongoose.connection.on('error', (err) => console.log(err));
 
 //routes
