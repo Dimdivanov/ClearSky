@@ -2,11 +2,11 @@
 <section>
   <div class="section-container">
     <div class="weather-menu">
-      <a href="/weather">Weather</a>
+      <a href="/dashboard">Weather</a>
       <a href="/my-places">My Places</a>
     </div>
     <app-weather [weather]="weatherData" />
-    <app-hourly-forecast [forecasts]="forecasts"/>
+    <app-hourly-forecast [forecasts]="forecasts" />
     <app-air-conditions [weather]="weatherData" />
   </div>
   <app-weekly-forecast [weather]="weatherData" />

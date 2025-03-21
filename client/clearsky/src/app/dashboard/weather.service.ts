@@ -8,8 +8,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class WeatherService {
-  private weatherSubject = new BehaviorSubject<WeatherData | null>(null);
-  weather$ = this.weatherSubject.asObservable();
+  private weatherSubject$$ = new BehaviorSubject<WeatherData | null>(null);
+  weather$ = this.weatherSubject$$.asObservable();
   
   constructor(private http: HttpClient) {}
 
@@ -22,6 +22,6 @@ export class WeatherService {
   }
 
   setWeatherData(weather: WeatherData): void {
-    this.weatherSubject.next(weather);
+    this.weatherSubject$$.next(weather);
   }
 }
