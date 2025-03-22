@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-
 const { SALT } = require('../config');
 
 const { ObjectId } = mongoose.Schema.Types;

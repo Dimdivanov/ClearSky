@@ -1,20 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserForAuth } from '../type/userForAuth';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
   user: UserForAuth | null = null;
-  private apiUrl = 'http://localhost:3000/auth';
 
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string): Observable<any> {
     return this.http.post<UserForAuth>(
-      `${this.apiUrl}/login`,
+      '/auth/login',
       {
         email,
         password,
@@ -30,7 +29,7 @@ export class UserService {
     rePassword: string
   ): Observable<any> {
     return this.http.post<UserForAuth>(
-      `${this.apiUrl}/register`,
+      '/auth/register',
       {
         username,
         email,
@@ -41,7 +40,12 @@ export class UserService {
     );
   }
 
-  logout() {
-    return this.http.post('/api/logout', {});
+  logout(): Observable<any> {
+    return this.http.post('/auth/logout', {}, { withCredentials: true }).pipe(
+      tap(() => {
+        this.user = null; 
+        localStorage.removeItem('token'); 
+      })
+    );
   }
 }

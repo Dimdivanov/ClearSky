@@ -15,10 +15,9 @@
       <div class="nav-items">
         <nav class="user-nav">
           <ul>
-            <!-- <li class="user-profile">
-                          <a href="/profile">Profile</a>
-                      </li>
-                      <li class="user-logout"><a href="/logout">Logout</a></li> -->
+            <li class="user-logout">
+              <a href="#" (click)="logout(); $event.preventDefault()">Logout</a>
+            </li>
             <!-- if not logged -->
             <li class="user-login"><a href="/login">Login</a></li>
             <li class="user-register">

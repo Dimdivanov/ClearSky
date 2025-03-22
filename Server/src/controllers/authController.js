@@ -10,7 +10,7 @@ router.post('/register', async (req, res) => {
             sameSite: 'None',
             secure: true,
         });
-        res.status(201).json({ message: 'Registration successful', token });
+        res.status(201).json({ message: 'Registration successful'});
     } catch (err) {
         console.error('Error registering the user:', err);
         res.status(400).json({ error: 'Server couldn not register user!' });
@@ -26,7 +26,7 @@ router.post('/login', async (req, res) => {
             sameSite: 'None',
             secure: true,
         });
-        res.status(201).json({ message: 'Logging successful', token });
+        res.status(201).json({ message: 'Login successful'});
     } catch (err) {
         console.error('Error logging the user:', err);
         res.status(400).json({ error: 'Login was not successful try again!' });
