@@ -1,21 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserForAuth } from '../type/userForAuth';
-import { Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  user: UserForAuth | null = null;
+  private user$$ = new BehaviorSubject<UserForAuth | undefined>(undefined);
+  user = this.user$$.asObservable();
 
   constructor(private http: HttpClient) {}
 
-  login(email: string, password: string): Observable<any> {
-    return this.http.post<UserForAuth>('/auth/login', {
-      email,
-      password,
-    });
+  login(email: string, password: string) {
+    return this.http
+      .post<UserForAuth>('/auth/login', {
+        email,
+        password,
+      })
+      .pipe(tap((user) => this.user$$.next(user)));
   }
 
   register(
@@ -23,19 +26,21 @@ export class UserService {
     email: string,
     password: string,
     rePassword: string
-  ): Observable<any> {
-    return this.http.post<UserForAuth>('/auth/register', {
-      username,
-      email,
-      password,
-      rePassword,
-    });
+  ) {
+    return this.http
+      .post<UserForAuth>('/auth/register', {
+        username,
+        email,
+        password,
+        rePassword,
+      })
+      .pipe(tap((user) => this.user$$.next(user)));
   }
 
-  logout(): Observable<any> {
+  logout() {
     return this.http.post('/auth/logout', {}).pipe(
       tap(() => {
-        this.user = null;
+        this.user$$.next(undefined);
         localStorage.removeItem('token');
       })
     );
