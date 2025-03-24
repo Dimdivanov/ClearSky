@@ -45,4 +45,12 @@ export class UserService {
       })
     );
   }
+
+  getProfile() {
+    return this.http.get<UserForAuth>('/auth/profile').pipe(
+      tap((user) => {
+        this.user$$.next(user);
+      })
+    );
+  }
 }
