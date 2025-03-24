@@ -1,17 +1,16 @@
 <div class="auth-container">
   <h1>Login</h1>
-  <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="auth-form">
+  <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()" class="auth-form">
     <div class="form-group">
       <label for="email">Email</label>
       <input
         type="email"
         id="email"
         name="email"
-        autocomplete="username"
+        autocomplete="email"
         required
         email
-        ngModel
-        #emailRef="ngModel"
+        formControlName="email"
       />
     </div>
     <div class="form-group">
@@ -20,11 +19,10 @@
         type="password"
         id="password"
         name="password"
-        autocomplete="new-password"
+        autocomplete="password"
         required
         password
-        ngModel
-        #passRef="ngModel"
+        formControlName="password"
       />
     </div>
     <button type="submit" class="btn-primary">Login</button>

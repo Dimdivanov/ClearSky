@@ -4,13 +4,11 @@
       <a class="logo" href="/dashboard">ClearSky.bg</a>
     </div>
     <div class="user-menu">
-      <div class="theme-items">
-        <button>Light</button>
-        <button>Dark</button>
-      </div>
-      <div class="cur-items">
-        <input type="checkbox" id="darkmode-toggle" />
-        <label for="darkmode-toggle"></label>
+      <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle" (change)="toggleTheme()" />
+        <label for="theme-toggle" class="switch">
+          <span class="slider"></span>
+        </label>
       </div>
       <div class="nav-items">
         <nav class="user-nav">

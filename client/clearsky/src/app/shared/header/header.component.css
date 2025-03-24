@@ -29,3 +29,48 @@ header {
   flex-direction: row;
   gap: 10px;
 }
+
+.theme-switch {
+  top: 1rem;
+  right: 1rem;
+}
+
+#theme-toggle {
+  display: none;
+}
+
+.switch {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #252b3a;
+  border: 2px solid #7e848e;
+  border-radius: 34px;
+  transition: 0.3s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 2px;
+  background-color: #1db954;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+#theme-toggle:checked + .switch .slider:before {
+  transform: translateX(26px);
+}

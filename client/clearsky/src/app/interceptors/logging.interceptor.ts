@@ -2,7 +2,7 @@ import { HttpInterceptorFn } from '@angular/common/http';
 import { environment } from '../environments/environments.development';
 
 export const loggingInterceptor: HttpInterceptorFn = (req, next) => {
-  const API = environment.loginUrl; 
+  const API = environment.loginUrl;
   const apiPath = '/auth';
 
   if (req.url.startsWith(apiPath)) {
@@ -10,6 +10,7 @@ export const loggingInterceptor: HttpInterceptorFn = (req, next) => {
 
     req = req.clone({
       url: req.url.replace(apiPath, API),
+      withCredentials: true,
     });
   }
 

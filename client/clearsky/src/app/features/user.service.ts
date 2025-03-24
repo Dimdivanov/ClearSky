@@ -12,14 +12,10 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string): Observable<any> {
-    return this.http.post<UserForAuth>(
-      '/auth/login',
-      {
-        email,
-        password,
-      },
-      { withCredentials: true }
-    );
+    return this.http.post<UserForAuth>('/auth/login', {
+      email,
+      password,
+    });
   }
 
   register(
@@ -28,23 +24,19 @@ export class UserService {
     password: string,
     rePassword: string
   ): Observable<any> {
-    return this.http.post<UserForAuth>(
-      '/auth/register',
-      {
-        username,
-        email,
-        password,
-        rePassword,
-      },
-      { withCredentials: true }
-    );
+    return this.http.post<UserForAuth>('/auth/register', {
+      username,
+      email,
+      password,
+      rePassword,
+    });
   }
 
   logout(): Observable<any> {
-    return this.http.post('/auth/logout', {}, { withCredentials: true }).pipe(
+    return this.http.post('/auth/logout', {}).pipe(
       tap(() => {
-        this.user = null; 
-        localStorage.removeItem('token'); 
+        this.user = null;
+        localStorage.removeItem('token');
       })
     );
   }

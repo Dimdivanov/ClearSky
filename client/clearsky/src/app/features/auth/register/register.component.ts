@@ -21,12 +21,13 @@ export class RegisterComponent {
   });
 
   onRegisterSubmit() {
-    const { username, email, password, rePassword } = this.registerForm.value;
+    const { username, email, password, rePassword } = this.registerForm?.value;
 
     this.userService
       .register(username!, email!, password!, rePassword!)
       .subscribe({
-        next: () => console.log('subscribe went through'),
+        next: () => console.log('Subscribe successful'),
+        error: (err) => console.error('Register has failed: ', err),
       });
     this.registerForm.reset();
   }

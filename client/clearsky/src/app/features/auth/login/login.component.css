@@ -1,24 +1,19 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 1rem;
-}
-
+/* Centered Authentication Container */
 .auth-container {
-  background-color: var(--surface-color);
+  background-color: #1c2331;
   padding: 2.5rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px var(--shadow-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 400px;
+  margin: 0 auto;
 }
 
 .auth-container h1 {
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 600;
+  color: white;
 }
 
 .form-group {
@@ -34,22 +29,22 @@ label {
 input {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid #7e848e;
   border-radius: 0.5rem;
-  background-color: var(--input-bg);
-  color: var(--text-color);
+  background-color: #252b3a;
+  color: white;
   transition: border-color 0.3s;
 }
 
 input:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border-color: #1db954;
 }
 
 .btn-primary {
   width: 100%;
   padding: 0.75rem;
-  background-color: var(--primary-color);
+  background-color: #1db954;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -68,68 +63,10 @@ input:focus {
 }
 
 .auth-link a {
-  color: var(--primary-color);
+  color: #1db954;
   text-decoration: none;
 }
 
 .auth-link a:hover {
   text-decoration: underline;
-}
-
-/* Theme Switch */
-.theme-switch {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-}
-
-#theme-toggle {
-  display: none;
-}
-
-.switch {
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  position: relative;
-  cursor: pointer;
-}
-
-.slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--surface-color);
-  border: 2px solid var(--border-color);
-  border-radius: 34px;
-  transition: 0.3s;
-}
-
-.slider:before {
-  content: "";
-  position: absolute;
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 2px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-#theme-toggle:checked + .switch .slider:before {
-  transform: translateX(26px);
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-  .auth-container {
-    padding: 1.5rem;
-  }
-
-  .auth-container h1 {
-    font-size: 1.5rem;
-  }
 }
