@@ -7,6 +7,7 @@ import { HourlyForecastComponent } from './hourly-forecast/hourly-forecast.compo
 import { AirConditionsComponent } from './air-conditions/air-conditions.component';
 import { WeeklyForecastComponent } from './weekly-forecast/weekly-forecast.component';
 import { ActivatedRoute } from '@angular/router';
+import { HighlightMenuDirective } from '../directives/highlight-menu.directive';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,13 +18,14 @@ import { ActivatedRoute } from '@angular/router';
     HourlyForecastComponent,
     AirConditionsComponent,
     WeeklyForecastComponent,
+    HighlightMenuDirective,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent implements OnInit {
   weatherData: WeatherData | null = null;
-  forecasts: (Forecast & { formattedTime: string } )[] = [];
+  forecasts: (Forecast & { formattedTime: string })[] = [];
 
   constructor(
     private weatherService: WeatherService,

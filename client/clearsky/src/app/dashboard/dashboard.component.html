@@ -2,8 +2,8 @@
 <section>
   <div class="section-container">
     <div class="weather-menu">
-      <a href="/dashboard">Weather</a>
-      <a href="/my-places">My Places</a>
+      <a href="/dashboard" appHighlightMenu>Current Weather</a>
+      <a href="/my-places" appHighlightMenu>My Places</a>
     </div>
     <app-weather [weather]="weatherData" />
     <app-hourly-forecast [forecasts]="forecasts" />

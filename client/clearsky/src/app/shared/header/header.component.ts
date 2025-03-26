@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../features/user.service';
 import { Router } from '@angular/router';
+import { HighlightMenuDirective } from '../../directives/highlight-menu.directive';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [HighlightMenuDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })

@@ -14,12 +14,19 @@
         <nav class="user-nav">
           <ul>
             <li class="user-logout">
-              <a href="#" (click)="logout(); $event.preventDefault()">Logout</a>
+              <a
+                href="#"
+                (click)="logout(); $event.preventDefault()"
+                appHighlightMenu
+                >Logout</a
+              >
             </li>
             <!-- if not logged -->
-            <li class="user-login"><a href="/login">Login</a></li>
+            <li class="user-login">
+              <a href="/login" appHighlightMenu>Login</a>
+            </li>
             <li class="user-register">
-              <a href="/register">Register</a>
+              <a href="/register" appHighlightMenu>Register</a>
             </li>
           </ul>
         </nav>
